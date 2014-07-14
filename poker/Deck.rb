@@ -4,23 +4,19 @@ class Deck
 
   def initialize
     @cards = []
+    create_cards
   end
 
-  def create
-    create_cards
-    shuffle
+  def cards
+    @cards
   end
 
   def create_cards
     FACES.each do |face|
       SUITS.each do |suit|
-        @cards.push(face + suit)
+        @cards.push(face + suit).shuffle!
       end
     end
   end
 
-  def shuffle
-   @cards.shuffle!
-  end
 end
-

@@ -2,14 +2,13 @@ require "./deck"
 
 class Game
   def initialize(deck)
-    @deck = deck.create
     @hands = {}
+    @deck = deck
   end
 
   def play
     get_players
     deal
-
   end
 
   def get_players
@@ -19,7 +18,7 @@ class Game
 
   def deal
     @number_of_players.times do |player_number|
-      @hands[player_number] =  @deck.pop(5)
+      @hands[player_number] = @deck.cards.pop(5)
       puts @hands[player_number]
     end
   end
