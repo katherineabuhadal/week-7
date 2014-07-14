@@ -4,7 +4,6 @@ class Deck
 
   def initialize
     @deck = []
-    @number_of_players
   end
 
   def deal
