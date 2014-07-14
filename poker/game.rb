@@ -18,8 +18,8 @@ class Game
 
   def deal
     @number_of_players.times do |player_number|
-      @hands[player_number] = @deck.cards.pop(5)
-      puts @hands[player_number]
+      @hands[player_number] = "Player #{player_number} hand:" + @deck.cards.pop(5).to_s
+      puts @hands[player_number] 
     end
   end
 end
