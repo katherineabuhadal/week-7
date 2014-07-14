@@ -3,26 +3,24 @@ class Deck
   SUITS = %w[H S D C]
 
   def initialize
-    @deck = []
+    @cards = []
   end
 
-  def deal
+  def create
     create_cards
-    deal_hand
+    shuffle
   end
 
   def create_cards
     FACES.each do |face|
       SUITS.each do |suit|
-        @deck.push(face + suit)
+        @cards.push(face + suit)
       end
     end
   end
 
-  def deal_hand
-    puts @deck.shuffle!.pop(5)
+  def shuffle
+   @cards.shuffle!
   end
 end
 
-deck = Deck.new
-deck.deal
