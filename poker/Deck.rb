@@ -1,39 +1,29 @@
 class Deck
+  FACES = %w[2 3 4 5 6 7 8 9 J Q K A]
+  SUITS = %w[H S D C]
+
   def initialize
     @deck = []
     @number_of_players
-    get_players
-    create_cards
-    shuffle
-    deal
   end
 
-  def get_players
-    print "How many people are playing?"
-    @number_of_players = gets.chomp.to_i
+  def deal
+    create_cards
+    deal_hand
   end
 
   def create_cards
-    faces = %w[2 3 4 5 6 7 8 9 J Q K A]
-    suits = %w[H S D C]
-
-    faces.each do |face|
-      suits.each do |suit|
+    FACES.each do |face|
+      SUITS.each do |suit|
         @deck.push(face + suit)
       end
     end
   end
 
-  def shuffle
-    @shuffled_cards = @deck.shuffle
+  def deal_hand
+    puts @deck.shuffle!.pop(5)
   end
-
-  def deal
-    @number_of_players.times do |hand|
-       puts @shuffled_cards.pop(5)
-    end
-  end
-
 end
 
 deck = Deck.new
+deck.deal
