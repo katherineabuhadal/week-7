@@ -6,7 +6,9 @@ class Deck
     @cards = []
     create_cards
   end
-
+  
+  attr_reader :cards
+  
   def cards
     @cards
   end
