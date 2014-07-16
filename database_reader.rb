@@ -6,7 +6,7 @@ class DatabaseReader
   end
 
   def read
-    CSV.foreach(@file_name, {:headers => true}) do |row|
+    CSV.foreach(@file_name, headers: :true) do |row|
       puts row["Hotel"]
     end
   end
