@@ -1,4 +1,4 @@
-require "CSV"
+require "csv"
 
 class DatabaseReader 
   def initialize(file_name)
@@ -6,11 +6,11 @@ class DatabaseReader
   end
 
   def read
-    CSV.foreach(@file_name, headers: :true) do |row|
-      puts row["Hotel"]
+    CSV.foreach(@file_name, headers: true) do |row|
+      # puts row["Hotel"]
     end
   end
 end
 
-database_reader = DatabaseReader.new("hotels.csv")
-database_reader.read
+# database_reader = DatabaseReader.new("hotels.csv")
+# database_reader.read
