@@ -1,29 +1,27 @@
 require "./database_reader"
+require "./hotel"
 
 class Search
-  def initialize(search)
-    @user_query
+  def initialize(hotels)
+    @hotels = hotels
   end
 
-  def make
+  def conduct
     prompt_user
-    print_answer
+    check_for_hotel
   end
 
   def prompt_user
-    print "What hotel name?"
+    print "What is the hotel name?"
     @user_query = gets.chomp
   end
 
-  def print_answer
-    puts @user_query
-
+  def check_for_hotel
+    hotel =  @hotels.find { |hotel| hotel.name == @user_query } 
+    puts hotel.display
   end
 end
 
 database_reader = DatabaseReader.new("hotels.csv")
-search = Search.new(database_reader.read)
-search.make
-
-
-
+search = Search.new(database_reader.hotels)
+search.conduct

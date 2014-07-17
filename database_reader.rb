@@ -1,16 +1,14 @@
 require "csv"
+require "./hotel"
 
 class DatabaseReader 
   def initialize(file_name)
     @file_name = file_name
   end
 
-  def read
-    CSV.foreach(@file_name, headers: true) do |row|
-      # puts row["Hotel"]
+  def hotels
+    CSV.foreach(@file_name, headers: true).map do |row|
+      Hotel.new(row)
     end
   end
 end
-
-# database_reader = DatabaseReader.new("hotels.csv")
-# database_reader.read
