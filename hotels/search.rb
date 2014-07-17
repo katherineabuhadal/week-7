@@ -1,4 +1,5 @@
 require "./database_reader"
+require "./null_hotel"
 
 class Search
   def initialize(hotels)
@@ -16,7 +17,7 @@ class Search
   end
 
   def check_for_hotel
-    hotel =  @hotels.find { |hotel| hotel.name == @user_query } 
+    hotel =  @hotels.find { |hotel| hotel.name == @user_query } || NullHotel.new
     puts hotel.display
   end
 end
