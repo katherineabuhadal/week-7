@@ -16,7 +16,7 @@ class Hotel
   end 
 
   def number_of_rooms
-    @data["Number of Singles"] + @data["Number of Doubles"]
+    @data["Number of Singles"].to_i + @data["Number of Doubles"].to_i
   end
 
   def display
