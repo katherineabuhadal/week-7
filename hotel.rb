@@ -26,5 +26,3 @@ class Hotel
     puts number_of_rooms
   end
 end
-
-
