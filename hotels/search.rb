@@ -1,5 +1,4 @@
 require "./database_reader"
-require "./hotel"
 
 class Search
   def initialize(hotels)
