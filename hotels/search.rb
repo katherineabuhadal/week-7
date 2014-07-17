@@ -18,7 +18,7 @@ class Search
   end
 
   def find_hotel
-    hotel =  @hotels.find { |hotel| hotel.name == @user_query } || NullHotel.new
+    @hotels.find { |hotel| hotel.name == @user_query } || NullHotel.new
   end
 end
 
