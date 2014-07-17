@@ -16,13 +16,15 @@ class Hotel
   end
 
   def number_of_rooms
-    @hotel_adapter.number_of_singles + @hotel_adapter.number_of_doubles
+    @hotel_adapter.number_of_rooms
   end
 
-  def display
-    puts "Name: #{name}"
-    puts "City: #{city}"
-    puts "Phone Number: #{phone_number}"
-    puts "Number of Rooms available: #{number_of_rooms}"
+  def information
+    [
+      "Name: #{name}",
+      "City: #{city}",
+      "Phone Number: #{phone_number}",
+      "Number of Rooms available: #{number_of_rooms}"
+    ].join("\n")
   end
 end

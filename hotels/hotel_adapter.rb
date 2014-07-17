@@ -22,4 +22,8 @@ class HotelAdapter
   def number_of_doubles
     @data["Number of Doubles"].gsub(/([",])/, "").to_i
   end
+
+  def number_of_rooms
+    number_of_singles + number_of_doubles
+  end
 end

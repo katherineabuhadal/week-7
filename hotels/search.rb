@@ -9,7 +9,7 @@ class Search
 
   def conduct
     prompt_user
-    find_hotel
+    puts find_hotel.information
   end
 
   def prompt_user
@@ -19,7 +19,6 @@ class Search
 
   def find_hotel
     hotel =  @hotels.find { |hotel| hotel.name == @user_query } || NullHotel.new
-    puts hotel.display
   end
 end
 
