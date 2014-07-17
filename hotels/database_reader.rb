@@ -1,4 +1,5 @@
 require "csv"
+require "./hotel_adapter"
 require "./hotel"
 
 class DatabaseReader 
@@ -8,7 +9,8 @@ class DatabaseReader
 
   def hotels
     CSV.foreach(@file_name, headers: true).map do |row|
-      Hotel.new(row)
+      hotel_adapter = HotelAdapter.new(row)
+      Hotel.new(hotel_adapter)
     end
   end
 end

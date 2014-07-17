@@ -1,28 +1,28 @@
 class Hotel
-  def initialize(data)
-    @data = data
+  def initialize(hotel_adapter)
+    @hotel_adapter = hotel_adapter
   end
 
   def name
-    @data["Hotel"]
-  end 
+    @hotel_adapter.name
+  end
 
   def city
-    @data["City"]
+    @hotel_adapter.city
   end
 
   def phone_number
-    @data["Phone Number"]
-  end 
+    @hotel_adapter.phone_number
+  end
 
   def number_of_rooms
-    @data["Number of Singles"].to_i + @data["Number of Doubles"].to_i
+    @hotel_adapter.number_of_singles + @hotel_adapter.number_of_doubles
   end
 
   def display
-    puts name
-    puts city
-    puts phone_number
-    puts number_of_rooms
+    puts "Name: #{name}"
+    puts "City: #{city}"
+    puts "Phone Number: #{phone_number}"
+    puts "Number of Rooms available: #{number_of_rooms}"
   end
 end

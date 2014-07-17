@@ -1,5 +1,6 @@
 require "./database_reader"
 require "./null_hotel"
+require "./hotel_adapter"
 
 class Search
   def initialize(hotels)
