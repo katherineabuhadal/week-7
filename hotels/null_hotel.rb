@@ -1,5 +1,5 @@
 class NullHotel
-  def method_missing
-    something
+  def display
+    "Sorry, there is no hotel by that name. Please try again."
   end
 end

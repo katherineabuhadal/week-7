@@ -8,7 +8,7 @@ class Search
 
   def conduct
     prompt_user
-    check_for_hotel
+    find_hotel
   end
 
   def prompt_user
@@ -16,7 +16,7 @@ class Search
     @user_query = gets.chomp
   end
 
-  def check_for_hotel
+  def find_hotel
     hotel =  @hotels.find { |hotel| hotel.name == @user_query } || NullHotel.new
     puts hotel.display
   end
